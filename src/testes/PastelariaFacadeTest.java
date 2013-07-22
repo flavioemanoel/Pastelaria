@@ -20,8 +20,7 @@ public class PastelariaFacadeTest {
 
 	@Before
 	public void inicializar() {
-		// flavio testando o commit
-		///nada ainda
+		
 		fachada = new PastelariaFacade();
 	}
 
