@@ -12,6 +12,8 @@ import negocio.Produto;
 
 public class PastelariaFacade {
 	
+	//tes git flavio
+	
 	GerenteDeEstoquePastelaria estoque = new GerenteDeEstoquePastelaria();
 	GerenteDeEntregaDomicilio entrega = new GerenteDeEntregaDomicilio();
 	GerenteDeComanda comanda = new GerenteDeComanda();
