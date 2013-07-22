@@ -20,6 +20,7 @@ public class PastelariaFacadeTest {
 
 	@Before
 	public void inicializar() {
+		// flavio testando o commit
 		fachada = new PastelariaFacade();
 	}
 
@@ -69,7 +70,7 @@ public class PastelariaFacadeTest {
 
 		fachada.atualizarNomeDoProduto(p1.getCodigo(), "Long Neck");
 
-		Assert.assertTrue("O codigo não foi modificado",
+		Assert.assertTrue("O codigo nï¿½o foi modificado",
 				p1.getNome() == "Long Neck");
 	}
 
@@ -98,7 +99,7 @@ public class PastelariaFacadeTest {
 
 		fachada.atualizarCodigoProduto(p1.getCodigo(), "4");
 
-		Assert.assertTrue("O codigo não foi modificado", p1.getCodigo() == "4");
+		Assert.assertTrue("O codigo nï¿½o foi modificado", p1.getCodigo() == "4");
 	}
 
 	@Test
@@ -112,7 +113,7 @@ public class PastelariaFacadeTest {
 
 		fachada.atualizarPrecoProduto(p1.getCodigo(), 4.5);
 
-		Assert.assertTrue("O codigo não foi modificado", p1.getPreco() == 4.5);
+		Assert.assertTrue("O codigo nï¿½o foi modificado", p1.getPreco() == 4.5);
 	}
 
 	@Test
@@ -124,7 +125,7 @@ public class PastelariaFacadeTest {
 		fachada.cadastrarProduto(p);
 		fachada.cadastrarProduto(p2);
 
-		Assert.assertTrue("O produto não foi removido, a assertiva deu false",
+		Assert.assertTrue("O produto nï¿½o foi removido, a assertiva deu false",
 				fachada.removerProdutoPermanentemente(p2.getCodigo()) == true);
 
 	}
@@ -140,7 +141,7 @@ public class PastelariaFacadeTest {
 
 		fachada.diminuirQtdeDeUmProduto("3");
 
-		Assert.assertTrue("Não esta diminuindo o produto do estoque",
+		Assert.assertTrue("Nï¿½o esta diminuindo o produto do estoque",
 				p2.getQtdeProduto() == 2);
 	}
 
@@ -153,7 +154,7 @@ public class PastelariaFacadeTest {
 		fachada.cadastrarProduto(p);
 		fachada.cadastrarProduto(p2);
 
-		Assert.assertFalse("O produto não foi removido, a assertiva deu false",
+		Assert.assertFalse("O produto nï¿½o foi removido, a assertiva deu false",
 				fachada.removerProdutoPermanentemente("5") == false);
 	}
 
@@ -168,18 +169,18 @@ public class PastelariaFacadeTest {
 
 		Produto p3 = fachada.pesquisarProdutoNoEstoque("5");
 		// teste furado
-		Assert.assertTrue("O objeto não deveria existir", p3 == null);
+		Assert.assertTrue("O objeto nï¿½o deveria existir", p3 == null);
 	}
 
 	@Test
 	public void adicionarUmClienteNoSistemaTest() {
 
 		Cliente cliente = new Cliente("Renata", "32266279",
-				"R. Coração de Jesus", "Paróquia Santo Antonio");
+				"R. Coraï¿½ï¿½o de Jesus", "Parï¿½quia Santo Antonio");
 		fachada.adicionarClienteNoSistema(cliente);
 		Cliente cliente2 = fachada.pesquisarClienteNoSistema(cliente
 				.getTelefone());
-		Assert.assertTrue("Número de telefone inesperado",
+		Assert.assertTrue("Nï¿½mero de telefone inesperado",
 				cliente2.getTelefone() == "32266279");
 	}
 
@@ -187,10 +188,10 @@ public class PastelariaFacadeTest {
 	public void adicionarClienteComTelefonesIguaisTest() {
 
 		Cliente cliente = new Cliente("Renata", "32266279",
-				"R. Coração de Jesus", "Paróquia Santo Antonio");
+				"R. Coraï¿½ï¿½o de Jesus", "Parï¿½quia Santo Antonio");
 		fachada.adicionarClienteNoSistema(cliente);
-		Cliente cliente2 = new Cliente("João", "32266279",
-				"R. Coração de Jesus", "Paróquia Santo Antonio");
+		Cliente cliente2 = new Cliente("Joï¿½o", "32266279",
+				"R. Coraï¿½ï¿½o de Jesus", "Parï¿½quia Santo Antonio");
 		fachada.adicionarClienteNoSistema(cliente2);
 		Assert.assertTrue("Os telefones deveriam ser iguais",
 				cliente.getTelefone() == cliente2.getTelefone());
@@ -200,13 +201,13 @@ public class PastelariaFacadeTest {
 	public void removerUmClienteDoSistemaTest() {
 
 		Cliente cliente = new Cliente("Renata", "32266279",
-				"R. Coração de Jesus", "Paróquia Santo Antonio");
-		Cliente cliente2 = new Cliente("João", "86010671", "R. José Barbalho",
+				"R. Coraï¿½ï¿½o de Jesus", "Parï¿½quia Santo Antonio");
+		Cliente cliente2 = new Cliente("Joï¿½o", "86010671", "R. Josï¿½ Barbalho",
 				"Mercadinho Boa Vista");
 		fachada.adicionarClienteNoSistema(cliente);
 		fachada.adicionarClienteNoSistema(cliente2);
 
-		Assert.assertTrue("O cliente não foi removido",
+		Assert.assertTrue("O cliente nï¿½o foi removido",
 				fachada.isRemoverClienteDoSistema(cliente) == true);
 	}
 
@@ -214,10 +215,10 @@ public class PastelariaFacadeTest {
 	public void pesquisarClienteNoSistemaTest() {
 
 		Cliente cliente = new Cliente("Renata", "32266279",
-				"R. Coração de Jesus", "Paróquia Santo Antonio");
+				"R. Coraï¿½ï¿½o de Jesus", "Parï¿½quia Santo Antonio");
 
-		Cliente cliente2 = new Cliente("João", "86010671",
-				"R. Coração de Jesus", "Paróquia Santo Antonio");
+		Cliente cliente2 = new Cliente("Joï¿½o", "86010671",
+				"R. Coraï¿½ï¿½o de Jesus", "Parï¿½quia Santo Antonio");
 
 		fachada.adicionarClienteNoSistema(cliente);
 		fachada.adicionarClienteNoSistema(cliente2);
@@ -233,7 +234,7 @@ public class PastelariaFacadeTest {
 	public void pesquisarUmClienteInexistenteTest() {
 
 		Cliente cliente = new Cliente("Renata", "32266279",
-				"R. Coração de Jesus", "Paróquia Santo Antonio");
+				"R. Coraï¿½ï¿½o de Jesus", "Parï¿½quia Santo Antonio");
 
 		fachada.adicionarClienteNoSistema(cliente);
 
@@ -314,7 +315,7 @@ public class PastelariaFacadeTest {
 		fachada.removerComandaPermanentemente(c3.getNumMesa());
 		int qtde = fachada.quantidadeDeComandasAbertas();
 
-		Assert.assertTrue("Não foi removida comanda", qtde == 4);
+		Assert.assertTrue("Nï¿½o foi removida comanda", qtde == 4);
 
 	}
 
@@ -390,7 +391,7 @@ public class PastelariaFacadeTest {
 		ItemDeComanda item5 = fachada.pesquisarItemNaComandaTest(24, item
 				.getProduto().getCodigo());
 
-		Assert.assertTrue("O item não está sendo adicionado as comanda  ",
+		Assert.assertTrue("O item nï¿½o estï¿½ sendo adicionado as comanda  ",
 				(item1 == item2) && (item3 == item4) && (item5 == item));
 
 	}
